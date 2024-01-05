@@ -60,13 +60,17 @@ def repl():
                 run_all(db) 
                 continue
 
-            run_query(db, command)
+            if command.startswith('q'):
+                run_query(db, command)
+                continue
+
+            raise AssertionError
 
         except AttributeError:
             print('Unkwown query:', command)
 
         except AssertionError:
-            print('Usage: { <query_name> | list | reset | all | dbs | exit | quit }')
+            print('Usage: { q<int> | list | reset | all | dbs | exit | quit }')
 
         except (ConnectionFailure, OperationFailure, TypeError) as err:
             print(err)
