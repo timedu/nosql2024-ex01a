@@ -21,15 +21,7 @@ def q3(db):
     '''
 
     return None
-  
-
-def q3b(db):
-    '''
-    Find a Document with Equality
-    '''
-
-    return None  
-  
+    
 
 def q4(db):
     '''
